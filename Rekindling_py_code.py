@@ -14,8 +14,13 @@ money, time, family = 0, 0, 0
 # A-Dewine is different from a-dewine and it cant be used as a variable name becase of the -
 
 # To unpack a list
-listing = [9, 8, 7]
+listing = ['9 ', '8 ', '7']
 x, y, z = listing
 print(x)
 print(y)
 print(z)
+
+# concatenating strings
+print(x, y, z)
+# Concatenating with plus involes adding space to the variable so they wont clauster up
+print(x + y + z)
