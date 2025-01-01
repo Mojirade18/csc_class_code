@@ -2,6 +2,7 @@
 print("Hello there!")
 age = int(input("How old are you? "))
 income = int(input("What is the approximate amount you earn monthly? "))
+if age >= 18: print("You are an adult")
 if age >= 18 and income > 500000:
     print("You are eligible to work.")
 elif age < 18 and income <= 500000:
