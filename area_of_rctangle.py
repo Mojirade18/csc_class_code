@@ -1,6 +1,6 @@
 # This snippet is used to print the are of a rectangle
 
-# This gets the vital information needed for running the program
+# This gets the vital informations needed for running the program
 loop = True
 while loop:
     try:
