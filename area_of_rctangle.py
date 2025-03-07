@@ -4,7 +4,7 @@
 loop = True
 while loop:
     try:
-        length_of_rectangle = float(input("What is the length of the rectangle? "))
+        length_of_rectangle = float(input("What is the length of the rectangles? "))
         breadth_of_rectangle = float(input("What is the breadth of the rectangle? "))
 
 # This is where the data is being manipulated
