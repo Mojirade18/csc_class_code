@@ -6,7 +6,7 @@ if age >= 18: print("You are an adult")
 if age >= 18 and income > 500000:
     print("You are eligible to work.")
 elif age < 18 and income <= 500000:
-    print("I think you would mostlikely get broke soon")
+    print("I think you would mostlikely gets broken soon")
     print("so dont just bother working")
 elif age >= 18 and income < 500000:
     print("You are eligible to work but you need to find a better job")
