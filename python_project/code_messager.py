@@ -16,5 +16,5 @@ if choice == 1:
             a = random.randrange(1,100)
             encrypted_value += str(a)
 
-print(f"The encrypted numbers for the word {word} is {encrypted_value}")
+print(f"The encrypted numbers for the word {word} is : {encrypted_value}")
             
