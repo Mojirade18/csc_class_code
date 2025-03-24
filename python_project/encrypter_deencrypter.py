@@ -1,5 +1,5 @@
-GREETING_MESSAGE = """Encrypt/Decrypt your message using XOR cipher. This is message coder by Moji"""
-
+GREETING_MESSAGE = """Hello there! 
+Its time to de-encrypt and encrypt your message."""
 def xor_encrypt_decrypt(text, key):
     """Encrypt or decrypt text using XOR cipher with the given key."""
     result = ""
@@ -40,25 +40,28 @@ def decrypt_message():
     except ValueError:
         print("Invalid encrypted message format. Please enter valid hexadecimal values.")
 
-
-print(GREETING_MESSAGE)
-print("What do you want to do?")
-print("1. encrypt your message.")
-print("2. De-encrypt your message.")
-
 while True:
-    try:
-        choice = int(input("What is your choice 1/2: "))
-        if choice in [1, 2]:
-            break
-        else:
-            print("Please enter either 1 or 2.")
-    except ValueError:
-        print("Invalid input. Please enter a number (1 or 2).")
+    print(GREETING_MESSAGE)
+    print("What do you want to do?")
+    print("1. encrypt your message.")
+    print("2. De-encrypt your message.")
+    print("3. Exit program.")
+    while True:
+        try:
+            choice = int(input("What is your choice 1/2/3: "))
+            if choice in [1, 2, 3]:
+                break
+            else:
+                print("Please enter either 1 or 2.")
+        except ValueError:
+            print("Invalid input. Please enter a number (1 or 2).")
 
-if choice == 1:
-    encrypt_message()
-elif choice == 2:
-    decrypt_message()
-else:
-    print("Invalid choice. Please select 1 or 2.")
+    if choice == 1:
+        encrypt_message()
+    elif choice == 2:
+        decrypt_message()
+    elif choice == 3:
+        print("Thank you for using this program.")
+        break
+    else:
+        print("Invalid choice. Please select 1 or 2.")
