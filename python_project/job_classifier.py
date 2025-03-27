@@ -1,41 +1,122 @@
-from difflib import get_close_matches
+# I want to make a job classifier where students get to say a skill they have then the code gives a list of what career has such skills.
+def greeting(name):
+    print(f"Hello {name}, welcome to job classifier")
+    
+def instructions():
+    global instruction
+    intruction = """The first thing you are expected to do is:
+1. Put in your name
+2. Type in the skills yo have
+3. Click enter an await the result"""
+    print(intruction)
 
-def job_classifier():
-    job_dict = {
-        "technology": ["Software Developer", "Cybersecurity Analyst", "Data Scientist", "AI Engineer"],
-        "healthcare": ["Doctor", "Nurse", "Medical Researcher", "Pharmacist"],
-        "engineering": ["Mechanical Engineer", "Electrical Engineer", "Civil Engineer", "Aerospace Engineer"],
-        "education": ["Teacher", "Professor", "Educational Consultant", "Curriculum Developer"],
-        "business": ["Marketing Manager", "Financial Analyst", "Entrepreneur", "HR Manager"],
-        "arts": ["Graphic Designer", "Musician", "Actor", "Writer"],
-        "science": ["Physicist", "Chemist", "Biologist", "Astronomer"],
-        "law": ["Lawyer", "Paralegal", "Judge", "Legal Consultant"],
-        "sports": ["Athlete", "Coach", "Sports Analyst", "Referee"]
-    }
-    
-    work_styles = {
-        "creative": ["Graphic Designer", "Musician", "Writer", "Actor"],
-        "analytical": ["Software Developer", "Data Scientist", "Physicist", "Financial Analyst"],
-        "hands-on": ["Engineer", "Doctor", "Athlete", "Chef"]
-    }
-    
-    user_interest = input("What job field are you interested in? ").strip().lower()
-    user_work_style = input("Do you prefer a creative, analytical, or hands-on job? ").strip().lower()
-    
-    closest_match = get_close_matches(user_interest, job_dict.keys(), n=1)
-    if closest_match:
-        field = closest_match[0]
-        careers = job_dict[field]
-        
-        if user_work_style in work_styles:
-            filtered_careers = [job for job in careers if job in work_styles[user_work_style]]
-            if filtered_careers:
-                return f"Based on your interest in {field} and your preference for {user_work_style} work, you might enjoy: {', '.join(filtered_careers)}."
-        
-        return f"You might enjoy a career in {field}: {', '.join(careers)}."
-    
-    return "Sorry, I couldn't classify your interest. Try using broader job categories!"
+List_of_jobs = {
+    "Software Developer": [
+        "Programming (Python, Java, C++)",
+        "Problem Solving",
+        "Data Structures & Algorithms",
+        "Version Control (Git)",
+        "Database Management",
+        "Software Testing",
+        "Object-Oriented Programming (OOP)",
+        "Agile Methodology"
+    ],
+    "Data Scientist": [
+        "Data Analysis",
+        "Machine Learning",
+        "Statistical Modeling",
+        "Python, R",
+        "Data Visualization (Matplotlib, Seaborn)",
+        "Big Data Technologies (Hadoop, Spark)",
+        "SQL, NoSQL",
+        "Data Preprocessing"
+    ],
+    "Web Developer": [
+        "HTML, CSS, JavaScript",
+        "Frontend Frameworks (React, Angular, Vue)",
+        "Backend Development (Node.js, Django, Flask)",
+        "Responsive Design",
+        "Version Control (Git)",
+        "Database Management (MySQL, MongoDB)",
+        "REST APIs",
+        "Cross-Browser Compatibility"
+    ],
+    "Graphic Designer": [
+        "Adobe Photoshop",
+        "Adobe Illustrator",
+        "UI/UX Design",
+        "Typography",
+        "Logo Design",
+        "Wireframing & Prototyping",
+        "Creative Thinking",
+        "Branding & Identity"
+    ],
+    "Project Manager": [
+        "Project Management",
+        "Agile & Scrum Methodology",
+        "Time Management",
+        "Budgeting & Cost Management",
+        "Risk Management",
+        "Team Leadership",
+        "Stakeholder Management",
+        "Communication Skills"
+    ],
+    "Digital Marketing Specialist": [
+        "SEO (Search Engine Optimization)",
+        "Content Marketing",
+        "PPC (Pay-Per-Click)",
+        "Social Media Marketing",
+        "Email Marketing",
+        "Google Analytics",
+        "Marketing Automation",
+        "Conversion Rate Optimization"
+    ],
+    "Civil Engineer": [
+        "Construction Management",
+        "Structural Analysis",
+        "CAD Software (AutoCAD, Revit)",
+        "Project Management",
+        "Geotechnical Engineering",
+        "Material Science",
+        "Surveying",
+        "Building Codes and Standards"
+    ],
+    "Nurse": [
+        "Patient Care",
+        "Medical Terminology",
+        "Clinical Skills",
+        "Pharmacology",
+        "Healthcare Documentation",
+        "First Aid & CPR",
+        "Medical Equipment Handling",
+        "Communication with Patients and Families"
+    ],
+    "Sales Manager": [
+        "Sales Strategy",
+        "Lead Generation",
+        "Customer Relationship Management (CRM)",
+        "Negotiation Skills",
+        "Team Leadership",
+        "Market Research",
+        "Sales Forecasting",
+        "Product Knowledge"
+    ],
+    "Teacher": [
+        "Lesson Planning",
+        "Classroom Management",
+        "Subject Expertise",
+        "Communication Skills",
+        "Technology Integration",
+        "Assessment and Evaluation",
+        "Adaptability",
+        "Patience & Empathy"
+    ]
+}
 
-# Run the classifier
-if __name__ == "__main__":
-    print(job_classifier())
+
+skills = input("What type of skills do you have? ")
+if skills.isalpha:
+    pass
+else:
+    print("Only alphabets are allowed!")
+    
