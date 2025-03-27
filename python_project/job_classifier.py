@@ -1,20 +1,18 @@
-# I want to make a job classifier where students get to say a skill they have then the code gives a list of what career has such skills.
 def greeting(name):
-    print(f"Hello {name}, welcome to job classifier")
+    print(f"Hello {name}, welcome to the Job Classifier!")
     
 def instructions():
-    global instruction
-    intruction = """The first thing you are expected to do is:
+    instruction = """The first thing you are expected to do is:
 1. Put in your name
-2. Type in the skills yo have
-3. Click enter an await the result"""
-    print(intruction)
+2. Type in the skills you have (separated by commas)
+3. Press enter and await the result"""
+    print(instruction)
 
 List_of_jobs = {
     "Software Developer": [
         "Programming (Python, Java, C++)",
         "Problem Solving",
-        "Data Structures & Algorithms",
+        "Data Structures and Algorithms",
         "Version Control (Git)",
         "Database Management",
         "Software Testing",
@@ -113,10 +111,26 @@ List_of_jobs = {
     ]
 }
 
+# Get user input
+skills = input("What type of skills do you have? ").strip().lower().split(",")
 
-skills = input("What type of skills do you have? ")
-if skills.isalpha:
-    pass
+# Clean up skills (remove extra spaces)
+skills = [skill.strip() for skill in skills]
+
+found_jobs = []
+
+# Check if any skill matches a job
+for job, job_skills in List_of_jobs.items():
+    for skill in skills:
+        if any(skill.lower() in js.lower() for js in job_skills):  # Case-insensitive match
+            found_jobs.append(job)
+            break  # Avoid duplicate job listings
+
+# Remove duplicates
+found_jobs = list(set(found_jobs))
+
+# Print results
+if found_jobs:
+    print(f"Based on your skills, you might be interested in: {', '.join(found_jobs)}")
 else:
-    print("Only alphabets are allowed!")
-    
+    print("No matching job found. Try another skill.")
