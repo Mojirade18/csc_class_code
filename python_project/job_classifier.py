@@ -5,8 +5,7 @@ def instructions():
     instruction = """The first thing you are expected to do is:
 1. Put in your name which you would have definitely done before now.
 2. Type in the skills you have (separated by commas)
-3. Press enter and await the result
-4. If you want to exit the program type in exit in the skills requested"""
+3. Press enter and await the result"""
     print(instruction)
 
 List_of_jobs = {
