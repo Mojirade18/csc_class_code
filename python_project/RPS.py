@@ -38,31 +38,36 @@ while True:
         sign = input("pick your sign (rock/ paper/ scissors): ").strip().lower()
         random_int = random.randrange(0, 2)
         computer_sign = mylist[random_int]
-        print(f"I pick {computer_sign}")
 
         if sign == "rock" and computer_sign == "scissors":
+            print(f"I pick {computer_sign}")
             print("You win")
             user_score += 1
             print(f"scores: you {user_score} - me {computer_score}")
         elif sign == "rock" and computer_sign == "paper":
+            print(f"I pick {computer_sign}")
             computer_score += 1
             print("I won")
             print(f"scores: you {user_score} - me {computer_score}")
         elif sign == "paper" and computer_sign == "rock":
+            print(f"I pick {computer_sign}")
             print("You win")
             user_score += 1
             print(f"scores: you {user_score} - me {computer_score}")
         elif sign == "paper" and computer_sign == "scissors":
+            print(f"I pick {computer_sign}")
             computer_score += 1
             print("I won")
             print(f"scores: you {user_score} - me {computer_score}")
         elif sign == "scissors" and computer_sign == "rock":
+            print(f"I pick {computer_sign}")
             computer_score += 1
             print("I won")
             print(f"scores: you {user_score} - me {computer_score}")
         elif sign == "scissors" and computer_sign == "paper":
+            print(f"I pick {computer_sign}")
             print("You win")
             user_score += 1
             print(f"scores: you {user_score} - me {computer_score}")
         else:
-            
+            print("Incorrect input!")
