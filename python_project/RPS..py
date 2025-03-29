@@ -17,7 +17,7 @@ def options():
         
 
 
-
+mylist = ["rock", "paper", "scissors"]
 
 
 
@@ -34,3 +34,4 @@ while True:
     
     if intake == 1:
         sign = input("pick your sign (rock/ paper/ scissors): ").strip().lower()
+        
