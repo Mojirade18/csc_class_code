@@ -1,7 +1,7 @@
 import random
 
 def greeting_message():
-    message = """Are you bored?
+    message = """Are you bored or stressed?
     If yes, then you are at the right place.
     If no, then trust me, you are still at the right place.
     Let the fun begin!
@@ -39,7 +39,7 @@ if intake == 1:
             rounds = int(rounds)
             break
         print("Please enter a valid positive number!")
-
+# A loop to make sure if loops through a certain number of rounds called by the user
     for i in range(rounds):
         # Get user input and ensure it's valid
         while True:
