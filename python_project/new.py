@@ -1,22 +1,10 @@
-class Student:
-    def __init__(self, name, grade):
+class person(): 
+    def __init__(self, name, age, gender ):
         self.name = name
-        self.grade = grade
-
-    def __str__(self):
-        return f"{self.name} 📚 says: 'School is fun!' 🎉"
-
-class Moji(Student):
-    def __init__(self, name, grade, favorite_subject):
-        super().__init__(name, grade)
-        self.favorite_subject = favorite_subject
-
-    def __str__(self):
-        return (
-            f"{self.name} 🤓 says: 'Learning is awesome!' 💡\n"
-            f"Grade: {self.grade} 🏆\n"
-            f"Favorite subject: {self.favorite_subject} ❤️"
-        )
-
-moji_object = Moji("Moji", 100, "Physics")
-print(moji_object)
+        self.age = age
+        self.gender = gender
+    
+    def introduce(self):
+        return f"Hey there my name is {self.name}\ni am {self.age} years old."
+    def birthday():
+        
