@@ -20,3 +20,8 @@ while True:
     AIB = float(input("How much do you have in your bank account? "))
     user_loan = loan (name, account_number, AIB)
     print(user_loan)
+    print(user_loan.accept(AIB))
+    again = input("\nWould you like to try again? (yes/no): ").lower()
+    if again != "yes":
+        print("Thanks for using Loany Bank App. Goodbye!")
+        break
