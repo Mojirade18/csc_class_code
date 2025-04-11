@@ -17,7 +17,7 @@ class loan:
 while True:
     name = input("What is your name? ") 
     account_number = input("What is your account number? ")
-    AIB = float(input("How much do you have in your bank account? "))
+    AIB = float(input("How much do you have in your bank account to be able to looan money? "))
     user_loan = loan (name, account_number, AIB)
     print(user_loan)
     print(user_loan.accept(AIB))
