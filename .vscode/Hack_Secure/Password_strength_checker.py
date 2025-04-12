@@ -6,8 +6,12 @@ def length(password):
         print("Please increase the length of your password.\nThank you")
     else:
         print("Your password has a good length\nWeldon")
-def uppercase():
-    pass
+def uppercase(password):
+    for x in password:
+        if x.isupper():
+            print("Your password has an uppercase\nThats a very good way of creating a password.")
+        else:
+            print("Please input an uppercase in yor password.")
 def lowercase():
     pass
 
@@ -17,5 +21,6 @@ def special_character():
     pass
 
 print ("Hey there this is a password checker")
-password = input("Input you password: ").strip()
-length(password)
+while True:
+    password = input("Input you password: ").strip()
+    length(password)
