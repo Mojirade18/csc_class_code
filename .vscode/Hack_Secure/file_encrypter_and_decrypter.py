@@ -6,62 +6,76 @@ def generate_key():
 
 # Function to encrypt a text file
 def encrypt_file(file_path, key, output_path):
-    # Read the file content
-    with open(file_path, 'rb') as file:
-        file_data = file.read()
+    try:
+        with open(file_path, 'rb') as file:
+            file_data = file.read()
 
-    # Encrypt the file data
-    fernet = Fernet(key)
-    encrypted_data = fernet.encrypt(file_data)
+        fernet = Fernet(key)
+        encrypted_data = fernet.encrypt(file_data)
 
-    # Save the encrypted data to a new file
-    with open(output_path, 'wb') as encrypted_file:
-        encrypted_file.write(encrypted_data)
+        with open(output_path, 'wb') as encrypted_file:
+            encrypted_file.write(encrypted_data)
 
-    print(f"File encrypted and saved as {output_path}")
+        print(f"\n✅ File encrypted and saved as: {output_path}")
+    except Exception as e:
+        print(f"\n❌ Error during encryption: {e}")
 
 # Function to decrypt a text file
 def decrypt_file(file_path, key, output_path):
-    # Read the encrypted file content
-    with open(file_path, 'rb') as file:
-        encrypted_data = file.read()
+    try:
+        with open(file_path, 'rb') as file:
+            encrypted_data = file.read()
 
-    # Decrypt the data
-    fernet = Fernet(key)
-    decrypted_data = fernet.decrypt(encrypted_data)
+        fernet = Fernet(key)
+        decrypted_data = fernet.decrypt(encrypted_data)
 
-    # Save the decrypted data to a new file
-    with open(output_path, 'wb') as decrypted_file:
-        decrypted_file.write(decrypted_data)
+        with open(output_path, 'wb') as decrypted_file:
+            decrypted_file.write(decrypted_data)
 
-    print(f"File decrypted and saved as {output_path}")
+        print(f"\n✅ File decrypted and saved as: {output_path}")
+    except Exception as e:
+        print(f"\n❌ Error during decryption: {e}")
 
-# Main function to provide the menu and handle user input
+# Main function
 def main():
-    print("Welcome to the file encryption/decryption program!")
+    print("🔐 Welcome to the File Encryption/Decryption Program!")
 
-    # Option to generate a new key
-    key_choice = input("Do you have a secret key? (y/n): ")
-    if key_choice.lower() == 'n':
-        key = generate_key()
-        print(f"New secret key generated: {key.decode()}")
-    else:
-        key = input("Enter your secret key: ").encode()
+    while True:
+        # Option to generate or enter a key
+        key_choice = input("\nDo you have a secret key? (y/n): ").lower()
+        while key_choice not in ['y', 'n']:
+            key_choice = input("Please enter 'y' or 'n': ").lower()
 
-    # Provide options for encryption and decryption
-    action = input("Do you want to (e)ncrypt or (d)ecrypt a file? ")
+        if key_choice == 'n':
+            key = generate_key()
+            print(f"\n🔑 New secret key generated (save this!):\n{key.decode()}")
+        else:
+            key = input("Enter your secret key: ").encode()
 
-    if action.lower() == 'e':
-        file_path = input("Enter the path of the text file to encrypt: ")
-        output_path = input("Enter the path to save the encrypted file: ")
-        encrypt_file(file_path, key, output_path)
-    elif action.lower() == 'd':
-        file_path = input("Enter the path of the encrypted file to decrypt: ")
-        output_path = input("Enter the path to save the decrypted file: ")
-        decrypt_file(file_path, key, output_path)
-    else:
-        print("Invalid option. Please choose 'e' to encrypt or 'd' to decrypt.")
+        # Choose action
+        action = input("\nWhat would you like to do?\n(e) Encrypt a file\n(d) Decrypt a file\nChoice: ").lower()
+        while action not in ['e', 'd']:
+            action = input("Please enter 'e' or 'd': ").lower()
 
-# Run the main program
+        if action == 'e':
+            file_path = input("Enter the path of the text file to encrypt: ")
+            output_path = input("Enter the path to save the encrypted file (e.g. encrypted.txt): ")
+            encrypt_file(file_path, key, output_path)
+
+        elif action == 'd':
+            file_path = input("Enter the path of the encrypted file to decrypt: ")
+            output_path = input("Enter the path to save the decrypted file (e.g. decrypted.txt): ")
+            decrypt_file(file_path, key, output_path)
+
+        # Ask if the user wants to continue
+        again = input("\nDo you want to perform another operation? (y/n): ").lower()
+        while again not in ['y', 'n']:
+            again = input("Please enter 'y' for yes or 'n' for no: ").lower()
+
+        if again == 'n':
+            print("\n👋 Goodbye! Stay secure!")
+            break
+
+# Run the program
 if __name__ == "__main__":
     main()
