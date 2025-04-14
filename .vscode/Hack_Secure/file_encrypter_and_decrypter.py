@@ -16,9 +16,9 @@ def encrypt_file(file_path, key, output_path):
         with open(output_path, 'wb') as encrypted_file:
             encrypted_file.write(encrypted_data)
 
-        print(f"\n✅ File encrypted and saved as: {output_path}")
+        print(f"\n File encrypted and saved as: {output_path}")
     except Exception as e:
-        print(f"\n❌ Error during encryption: {e}")
+        print(f"\n Error during encryption: {e}")
 
 # Function to decrypt a text file
 def decrypt_file(file_path, key, output_path):
