@@ -32,13 +32,13 @@ def decrypt_file(file_path, key, output_path):
         with open(output_path, 'wb') as decrypted_file:
             decrypted_file.write(decrypted_data)
 
-        print(f"\n✅ File decrypted and saved as: {output_path}")
+        print(f"\n File decrypted and saved as: {output_path}")
     except Exception as e:
-        print(f"\n❌ Error during decryption: {e}")
+        print(f"\n Error during decryption: {e}")
 
 # Main function
 def main():
-    print("🔐 Welcome to the File Encryption/Decryption Program!")
+    print(" Welcome to the File Encryption/Decryption Program!")
 
     while True:
         # Option to generate or enter a key
@@ -48,7 +48,7 @@ def main():
 
         if key_choice == 'n':
             key = generate_key()
-            print(f"\n🔑 New secret key generated (save this!):\n{key.decode()}")
+            print(f"\n New secret key generated (save this!):\n{key.decode()}")
         else:
             key = input("Enter your secret key: ").encode()
 
@@ -73,7 +73,7 @@ def main():
             again = input("Please enter 'y' for yes or 'n' for no: ").lower()
 
         if again == 'n':
-            print("\n👋 Goodbye! Stay secure!")
+            print("\n Goodbye! Stay secure!")
             break
 
 # Run the program
