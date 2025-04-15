@@ -6,9 +6,9 @@ class loan:
 
     def accept(self, AIB):
         if AIB > 20000:
-            return("✅You are eligible to loan money")
+            return("You are eligible to loan money")
         else:
-            return("❌You have to have above 20 000 naira in your account")
+            return("You have to have above 20 000 naira in your account")
 
     def __str__(self):
         return f"Hey {self.name}, welcome to loany bank app."
