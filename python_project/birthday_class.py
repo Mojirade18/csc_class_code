@@ -10,7 +10,7 @@ class Person:
         Person.population += 1
 
     def introduce(self):
-        return f"Hey there! My name is {self.name}.\nI am {self.age} years old and identify as {self.gender}."
+        return f"Hey there! your name is {self.name}.\nI am {self.age} years old and identify as {self.gender}."
 
     def birthday(self):
         self.age += 1
