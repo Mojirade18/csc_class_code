@@ -20,9 +20,9 @@ class Person:
 
     def is_adult(self):
         if self.age >= 18:
-            return "✅ You are an adult."
+            return " You are an adult."
         else:
-            return "❌ You are underaged. Come back when you're 18."
+            return " You are underaged. Come back when you're 18."
 
     def greet(self, other_person):
         print(f"{self.name} says: Hi {other_person.name}, nice to meet you!")
