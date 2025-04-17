@@ -15,7 +15,7 @@ class Person:
     def birthday(self):
         self.age += 1
         birth_year = 2025 - self.age
-        print(f"🎉 Happy Birthday, {self.name}! You are now {self.age} years old.")
+        print(f" Happy Birthday, {self.name}! You are now {self.age} years old.")
         print(f"You were born on {self.DOB}/{self.MOB}/{birth_year}.")
 
     def is_adult(self):
