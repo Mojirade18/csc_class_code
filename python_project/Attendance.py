@@ -6,7 +6,6 @@ class Student:
         self.__name = name  # private attribute
         self.__date_of_birth = datetime.strptime(date_of_birth, "%Y-%m-%d")
         self.__attendance_dates = []  # private list to store attendance
-# Getter for name (encapsulation)
     def get_name(self):
         return self.__name
 
