@@ -3,7 +3,7 @@ import math
 
 class Student:
     def __init__(self, name, date_of_birth):
-        self.__name = name  # private attribute
+        self.__name = name  
         self.__date_of_birth = datetime.strptime(date_of_birth, "%Y-%m-%d")
         self.__attendance_dates = [] 
     def get_name(self):
@@ -17,7 +17,7 @@ class Student:
             age -= 1
         return age
 
-    # Record attendance
+    
     def mark_attendance(self):
         today = datetime.today().date()
         if today not in self.__attendance_dates:
@@ -26,17 +26,17 @@ class Student:
         else:
             print(f"{self.__name} is already marked present for today.")
 
-    # Attendance percentage calculator
+    
     def attendance_percentage(self, total_school_days):
         attended_days = len(self.__attendance_dates)
         percentage = (attended_days / total_school_days) * 100
         return round(percentage, 2)
 
-    # Get attendance summary
+    
     def get_attendance_summary(self):
         return f"{self.__name} has attended {len(self.__attendance_dates)} day(s): {self.__attendance_dates}"
 
-# Example usage
+
 student1 = Student("Amina Yusuf", "2005-06-15")
 print("Name:", student1.get_name())
 print("Age:", student1.calculate_age())
