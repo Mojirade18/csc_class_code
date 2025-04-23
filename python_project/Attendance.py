@@ -5,11 +5,11 @@ class Student:
     def __init__(self, name, date_of_birth):
         self.__name = name  # private attribute
         self.__date_of_birth = datetime.strptime(date_of_birth, "%Y-%m-%d")
-        self.__attendance_dates = []  # private list to store attendance
+        self.__attendance_dates = [] 
     def get_name(self):
         return self.__name
 
-    # Age calculator (using date)
+    
     def calculate_age(self):
         today = datetime.today()
         age = today.year - self.__date_of_birth.year
