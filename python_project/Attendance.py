@@ -37,7 +37,7 @@ class Student:
         return f"{self.__name} has attended {len(self.__attendance_dates)} day(s): {self.__attendance_dates}"
 
 
-student1 = Student("Amina Yusuf", "2005-06-15")
+student1 = Student("Amina Yusuf", "2005\S06\15")
 print("Name:", student1.get_name())
 print("Age:", student1.calculate_age())
 
