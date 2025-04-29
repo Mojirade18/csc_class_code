@@ -73,7 +73,7 @@ def main():
             again = input("Please enter 'y' for yes or 'n' for no: ").lower()
 
         if again == 'n':
-            print("\n Goodbye! Stay secure!")
+            print("\n Goodbye! Stay secured and safe!")
             break
 
 # Run the program
