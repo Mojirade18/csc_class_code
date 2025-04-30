@@ -2,9 +2,9 @@ from datetime import datetime, timedelta
 
 class Student:
     def __init__(self, name, date_of_birth):
-        self.__name = name
-        self.__date_of_birth = datetime.strptime(date_of_birth, "%Y-%m-%d")
-        self.__attendance_dates = set()
+        self.name = name
+        self.date_of_birth = datetime.strptime(date_of_birth, "%Y-%m-%d")
+        self.attendance_dates = set()
 
     def get_name(self):
         return self.__name
