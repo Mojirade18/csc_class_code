@@ -46,8 +46,8 @@ class Student:
 # Demo
 student1 = Student("Amina Yusuf", "2005-06-15")
 
-print("Name:", student1.get_name())
-print("Age:", student1.calculate_age())
+print("Name of student:", student1.get_name())
+print("Age of student:", student1.calculate_age())
 
 # Mark attendance for today and 2 previous days
 student1.mark_attendance()
