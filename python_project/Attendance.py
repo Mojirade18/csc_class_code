@@ -3,6 +3,7 @@ from datetime import datetime, timedelta
 class Student:
     def __init__(self, name, date_of_birth):
         self.name = name
+        #date_of_birth is converted from string to a datetime object using strptime.
         self.date_of_birth = datetime.strptime(date_of_birth, "%Y-%m-%d")
         self.attendance_dates = set()
 
