@@ -45,8 +45,9 @@ class Student:
 
 
 # Demo
-student1 = Student("Amina Yusuf", "2005-06-15")
-
+name = input("Enter the name of the student: ")
+date_of_birth = input("Enter the date of birth (YYYY-MM-DD): ")
+student1 = Student(name, date_of_birth)
 print("Name of student:", student1.get_name())
 print("Age of student:", student1.calculate_age())
 
