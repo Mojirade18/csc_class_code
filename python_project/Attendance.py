@@ -57,4 +57,4 @@ student1.mark_attendance((datetime.today() - timedelta(days=1)).strftime("%Y-%m-
 student1.mark_attendance((datetime.today() - timedelta(days=2)).strftime("%Y-%m-%d"))
 
 print(student1.get_attendance_summary())
-print("Attendance Percentage (out of 20 school days):", student1.attendance_percentage(20), "%")
+print("Attendance Percentages (out of 20 school days):", student1.attendance_percentage(20), "%")
