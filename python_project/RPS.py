@@ -1,7 +1,7 @@
 import random
 
 def greeting_message():
-    message = """Are you bored or stressed?
+    message = """Are you bored or stressed OR HAPPY?
     If yes, then you are at the right place.
     If no, then trust me, you are still at the right place.
     Let the fun begin!
