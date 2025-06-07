@@ -8,7 +8,7 @@ def xor_encrypt_decrypt(text, key):
     return result
 
 def get_key_or_default(prompt="Enter a secret key: "):
-    """Get key from user or return default if none provided."""
+    """Gets key from user or return default if none provided."""
     key = input(prompt)
     if not key:
         key = "default_key"
