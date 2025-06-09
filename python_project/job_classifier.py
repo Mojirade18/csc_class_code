@@ -5,7 +5,7 @@ def instructions():
     instruction = """The first thing you are expected to do is:
 1. Put in your name which you would have definitely done before now.
 2. Type in the skills you have (separated by commas)
-3. Press enter and await the result"""
+3. Press enter and await the results"""
     print(instruction)
 
 List_of_jobs = {
