@@ -8,7 +8,7 @@ class ChatBot:
         self.responses = {
             "hello": "Hi there! How can I help you?",
             "how are you?": "I'm just a bot, but I'm doing great! How about you?",
-            "what is your name?": f"My name is {self.name}.",
+            "what's your name?": f"My name is {self.name}.",
             "bye": "Goodbye! Have a great day!"
         }
         self.load_memory()
