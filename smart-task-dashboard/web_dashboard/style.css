@@ -1,0 +1,48 @@
+/* Reset and base styles */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+  background: linear-gradient(to right, #eef2f3, #8e9eab);
+  color: #333;
+  padding: 40px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+/* Header */
+h1 {
+  margin-bottom: 30px;
+  font-size: 2.5rem;
+  color: #2c3e50;
+}
+
+/* Task List */
+#taskList {
+  list-style: none;
+  width: 100%;
+  max-width: 600px;
+  background: white;
+  padding: 20px;
+  border-radius: 15px;
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.15);
+}
+
+#taskList li {
+  padding: 12px 20px;
+  margin-bottom: 12px;
+  border-radius: 8px;
+  background-color: #ecf0f1;
+  font-size: 1.1rem;
+  transition: 0.3s;
+}
+
+#taskList li:hover {
+  background-color: #d0d3d4;
+  transform: translateX(5px);
+}
