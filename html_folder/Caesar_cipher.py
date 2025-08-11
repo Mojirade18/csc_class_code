@@ -5,11 +5,11 @@ result = ""
 
 for char in letter:
     if char.isalpha():  # only shift letters
-        ascii_offset = 65 if char.isupper() else 97
         if char.isupper():
             ascii_offset = 65
         else:
             ascii_offset = 97
+        new_char = chr((ord(char) - ascii_offset + shift) % 26 + ascii_offset)
         result += new_char
     else:
         result += char  # keep spaces, punctuation as is
