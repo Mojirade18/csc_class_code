@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Caesar Cipher</title>
+    <style>
+      body {
+        font-family: Arial, sans-serif;
+        display: flex;
+        height: 100vh;
+        justify-content: center;
+        align-items: center;
+        background: #f2f2f2;
+      }
+      .container {
+        background: white;
+        padding: 20px;
+        border-radius: 10px;
+        box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
+        width: 300px;
+        text-align: center;
+      }
+      textarea,
+      button {
+        width: 90%;
+        padding: 10px;
+        margin: 10px 0;
+        border-radius: 5px;
+        border: 1px solid #ccc;
+        font-size: 14px;
+      }
+      button {
+        background: #007bff;
+        color: white;
+        border: none;
+        cursor: pointer;
+      }
+      button:hover {
+        background: #0056b3;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="container">
+      <h2>Caesar Cipher</h2>
+      <textarea id="inputText" placeholder="Enter your text..."></textarea>
+      <textarea
+        id="outputText"
+        placeholder="Encrypted output..."
+        readonly
+      ></textarea>
+      <br />
+      <button onclick="encrypt()">Encrypt</button>
+      <button onclick="retry()">Retry</button>
+    </div>
+
+    <script>
+      function caesarCipher(text, shift = 3) {
+        let result = "";
+        for (let i = 0; i < text.length; i++) {
+          let char = text[i];
+          if (/[a-zA-Z]/.test(char)) {
+            // only shift letters
+            let asciiOffset = char === char.toUpperCase() ? 65 : 97;
+            let newChar = String.fromCharCode(
+              ((char.charCodeAt(0) - asciiOffset + shift) % 26) + asciiOffset
+            );
+            result += newChar;
+          } else {
+            result += char; // keep spaces/punctuation as is
+          }
+        }
+        return result;
+      }
+
+      function encrypt() {
+        let text = document.getElementById("inputText").value;
+        document.getElementById("outputText").value = caesarCipher(text, 3);
+      }
+
+      function retry() {
+        document.getElementById("inputText").value = "";
+        document.getElementById("outputText").value = "";
+      }
+    </script>
+  </body>
+</html>
