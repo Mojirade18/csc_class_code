@@ -1,85 +1,65 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <title>Caesar Cipher</title>
+    <title>Caesar Cipher Tool</title>
     <style>
       body {
         font-family: Arial, sans-serif;
-        display: flex;
-        height: 100vh;
-        justify-content: center;
-        align-items: center;
-        background: #f2f2f2;
-      }
-      .container {
-        background: white;
-        padding: 20px;
-        border-radius: 10px;
-        box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
-        width: 300px;
         text-align: center;
+        margin: 20px;
+        background-color: #f4f4f4;
       }
-      textarea,
-      button {
-        width: 90%;
+      img {
+        width: 200px;
+        border-radius: 10px;
+        margin-bottom: 20px;
+      }
+      textarea {
+        width: 300px;
+        height: 80px;
         padding: 10px;
-        margin: 10px 0;
-        border-radius: 5px;
-        border: 1px solid #ccc;
-        font-size: 14px;
       }
       button {
-        background: #007bff;
-        color: white;
-        border: none;
+        padding: 10px 15px;
+        margin-top: 10px;
         cursor: pointer;
       }
-      button:hover {
-        background: #0056b3;
+      h2 {
+        color: #333;
       }
     </style>
   </head>
   <body>
-    <div class="container">
-      <h2>Caesar Cipher</h2>
-      <textarea id="inputText" placeholder="Enter your text..."></textarea>
-      <textarea
-        id="outputText"
-        placeholder="Encrypted output..."
-        readonly
-      ></textarea>
-      <br />
-      <button onclick="encrypt()">Encrypt</button>
-      <button onclick="retry()">Retry</button>
-    </div>
+    <h1>Caesar Cipher Tool</h1>
+    <img
+      src="https://videos.openai.com/vg-assets/assets%2Ftask_01k2cyr57bee8szc5kwh94aatk%2F1754929199_img_0.webp?st=2025-08-11T15%3A26%3A45Z&se=2025-08-17T16%3A26%3A45Z&sks=b&skt=2025-08-11T15%3A26%3A45Z&ske=2025-08-17T16%3A26%3A45Z&sktid=a48cca56-e6da-484e-a814-9c849652bcb3&skoid=aa5ddad1-c91a-4f0a-9aca-e20682cc8969&skv=2019-02-02&sv=2018-11-09&sr=b&sp=r&spr=https%2Chttp&sig=uPQY9NsWnIWWD3FF6Fpi0Ra8Ue2j7XWQFY0zO04c22g%3D&az=oaivgprodscus"
+      alt="Caesar Cipher Image"
+    />
+
+    <textarea id="textInput" placeholder="Type text to cipher..."></textarea
+    ><br />
+    <button onclick="encryptText()">Encrypt</button>
+    <h2 id="output">Ciphered text:</h2>
 
     <script>
-      function caesarCipher(text, shift = 3) {
+      function encryptText() {
+        let letter = document.getElementById("textInput").value;
+        let shift = 3;
         let result = "";
-        for (let i = 0; i < text.length; i++) {
-          let char = text[i];
+
+        for (let char of letter) {
           if (/[a-zA-Z]/.test(char)) {
-            // only shift letters
             let asciiOffset = char === char.toUpperCase() ? 65 : 97;
             let newChar = String.fromCharCode(
               ((char.charCodeAt(0) - asciiOffset + shift) % 26) + asciiOffset
             );
             result += newChar;
           } else {
-            result += char; // keep spaces/punctuation as is
+            result += char;
           }
         }
-        return result;
-      }
-
-      function encrypt() {
-        let text = document.getElementById("inputText").value;
-        document.getElementById("outputText").value = caesarCipher(text, 3);
-      }
-
-      function retry() {
-        document.getElementById("inputText").value = "";
-        document.getElementById("outputText").value = "";
+        document.getElementById("output").innerText =
+          "Ciphered text: " + result;
       }
     </script>
   </body>
